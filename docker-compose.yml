@@ -1,0 +1,25 @@
+services:
+  web:
+    build: .
+    container_name: nerimity-web
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    environment:
+      # API Configuration
+      - SERVER_URL=http://localhost:3000
+      - WS_URL=http://localhost:3000
+      - APP_URL=http://localhost:3000
+
+      # Web Configuration
+      - MOBILE_WIDTH=850
+      - DEV_MODE=false
+      - MESSAGE_LIMIT=50
+
+      # External Services (Can be left empty if self-hosted alternatives exist or function disabled)
+      - TURNSTILE_SITEKEY=
+      - EMOJI_URL=
+      - NERIMITY_CDN=
+      - OFFICIAL_SERVER=
+      - GOOGLE_CLIENT_ID=
+      - GOOGLE_API_KEY=
