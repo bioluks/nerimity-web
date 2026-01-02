@@ -3,3 +3,4 @@ dist
 .env
 dev-dist
 .DS_Store
+docker-compose.test.yml
